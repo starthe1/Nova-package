@@ -1,4 +1,4 @@
-//packages
+﻿//packages
 var https = require('https')
 const { exec } = require("child_process");
 const express = require('express');
@@ -141,7 +141,7 @@ app.use(function (err, req, res, next) {
 
 const nodejsv = process.version; //nodejs version
 const { Database } = require("quickmongo");
-const mongo = new Database('mongodb://admin:KCKIafDj5a@n2.luxxy.host:1554/?authSource=admin');
+const mongo = new Database('');
 
 function importData() {
     const data = db.all();
