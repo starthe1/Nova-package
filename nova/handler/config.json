@@ -1,0 +1,21 @@
+{
+
+"bots_settings": {
+"token": "" //bot token
+},
+
+"dash_settings": {
+
+"id": , //discord bot id
+"secret": "", //Discord bot secret
+"redirect": "" //your domain with /callback infront put in redirect area in discord developer portal
+},
+
+"webite_settings": {
+    "title": "",//embed and webpage title
+    "url": "", //website url
+    "status-page": "", //Status page url (optional)
+    "embed-description": "" //discord embed description for website
+}
+
+}

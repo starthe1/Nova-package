@@ -1,0 +1,2 @@
+language = "nodejs"
+run = "/home/runner/api/node_modules/pm2/bin/pm2 kill; /home/runner/api/node_modules/pm2/bin/pm2 start index.js; /home/runner/api/node_modules/pm2/bin/pm2 logs"
