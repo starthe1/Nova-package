@@ -5,7 +5,7 @@ module.exports = ({
     usage: "",
     category: "information",
     code: `$title[Botinfo ($username[$clientID])]
-    $color[RANDOM]
+    $color[#2f3136]
     $thumbnail[$userAvatar[$clientID]]
     $addField[RAM; $ramMB]
     $addField[CPU Usage; $cpu/100]

@@ -12,7 +12,10 @@ quote ¦ Quote a message
 editsnipe ¦ Check edited messages
 snipe ¦ Snipe recently deleted messages
 addemoji ¦ Add an emoji
-afk ¦ set a afk status]
-$color[#a1a9a8]
+afk ¦ set a afk status
+add-cmd ¦ Add a custom command
+del-cmd ¦ Delete custom command
+cmd-list ¦ See custom commands]
+$color[#2f3136]
 `
 })

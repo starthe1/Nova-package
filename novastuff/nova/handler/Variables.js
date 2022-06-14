@@ -18,8 +18,8 @@ module.exports = ({
  
    clearsong: "✅ Cleared queue. from **{amount} song** to **0**", //Available {amount}//
    shuffle: "Shuffle Queue.",
-   errorjoin: "{title:❌ You're not in a voice channel.} {color:FFFF00}",
-   errorqueue: "{title:❌ There no song was playing.} {color:FF0000}",
+   errorjoin: "{title:❌ You're not in a voice channel.} {color:#2f3136}",
+   errorqueue: "{title:❌ There no song was playing.} {color:#2f3136}",
  
    join: "Joined Voice Channel to the {join}.", //Available {join}//
    dc: "Disconnected.",
@@ -395,7 +395,7 @@ module.exports = ({
     afk: "",
    reason: "",
  
-   mrole:"Muted", //Original Mute Role
+   mrole:"", //Original Mute Role
    //Warns
    wc:"0",//Warn Count
    reason:"",//Warn Reasons
@@ -549,9 +549,6 @@ module.exports = ({
    nah: "<:cross:895767564322492488>",
    yeah: "<a:yes:895767602071224380>",
    bl: "",
-   color: "#ff4500",
-   embedColor: "#ff4500",
-   embedcolor: "#ff4500",
    invite: "https://discord.com/api/oauth2/authorize?client_id=896133866874613820&permissions=8&scope=bot",
    pfp: "https://cdn.discordapp.com/avatars/896133866874613820/a0e67da344cae9abfc29115193e9e0bd.png?size=2048",
    info: "Requested by $username#$discriminator[$authorid]",
@@ -626,15 +623,14 @@ module.exports = ({
  
    clearsong: "✅ Cleared queue. from **{amount} song** to **0**", //Available {amount}//
    shuffle: "Shuffle Queue.",
-   errorjoin: "{title:❌ You're not in a voice channel.} {color:FFFF00}",
-   errorqueue: "{title:❌ There no song was playing.} {color:FF0000}",
+   errorjoin: "{title:❌ You're not in a voice channel.} {color:#2f3136}",
+   errorqueue: "{title:❌ There no song was playing.} {color:#2f3136}",
  
    join: "Joined Voice Channel to the {join}.", //Available {join}//
    dc: "Disconnected.",
  
    //Changing Other//
-   clientidsoundcloud: "7g7gIkrcAS05cJVf2FlIsnkOXtg4JdSe", //for soundcloud
-   color: "000001",
+   clientidsoundcloud: "7g7gIkrcAS05cJVf2FlIsnkOXtg4JdSe", //for soun
    permission: "294233959488",
    userid: "default",
    logmusic: "0",
@@ -728,4 +724,7 @@ badge3: "blank",
         abm: "",
         abm2: "",
         apikey: "",
+        message: "",
+        spamLimit: "3",
+        commandusersused: "0"
 });

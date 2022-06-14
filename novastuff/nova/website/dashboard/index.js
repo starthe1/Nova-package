@@ -2799,32 +2799,8 @@ app.get('/:id/setprefix', async (req,res) => {
     let b=dash.generateUrl()
     res.redirect(b)
   }
-})
+})   
 
-app.get('/api/status', (req, res) => {        
-res.send({"server": "Server is online"})
-});
-
-app.get('/features', (req, res) => {
-	res.sendFile('features.html', {root: __dirname })
-});
-
-app.get('/terms', (req, res) => {
-	res.sendFile('terms.html', {root: __dirname })
-});
-
-app.get('/', (req, res) => {
-	res.sendFile('index.html', {root: __dirname })
-});
- 
-app.get('/status', (req, res) => {
-res.sendFile('status.html', {root: __dirname })
-});
-
-app.use(function(req, res) {
-    res.sendFile('oof.html', {root: __dirname });
-})
-
-        app.listen(port)
-    console.log("dashboard ready in port: "+port)
+app.listen(port)
+console.log("dashboard ready in port: "+port)
     }

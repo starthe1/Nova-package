@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['changeprefix' , 'setprefix' , 'change prefix'],
     code:`
     $title[Prefix change]
-    $color[PURPLE]
+    $color[#2f3136]
     $footer[prefix changed by $username#$discriminator[$authorid]; $userAvatar[896303947311104041]]
     $thumbnail[$userAvatar[896303947311104041]]
     $description[i changed my prefix to **$message** if you think this is a mistake u can always change it back]

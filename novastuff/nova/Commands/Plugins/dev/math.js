@@ -14,7 +14,7 @@ $addField[📥 Input; \`\`\`$message\`\`\`;yes]
 ]
 $footer[Calculator made with Math.js]
 $color[ORANGE]
-$onlyForids[$botownerid;746295959251583048;only my owners may use this command]
+$onlyForids[$botownerid;746295959251583048;845312519001342052;764888169047916636;only my owners may use this command]
 $onlyIf[$checkContains[$toLowercase[$message];@;#;$;_;&;!;?]==false;]
 $suppressErrors
 `

@@ -24,7 +24,7 @@ res.setTimeout(3000, function timeOut() {
 
 setTimeout(process.exit, 3600000)
 
-app.use('/', require('./router'))
+app.use('/', require('./router.js'))
 
 app.listen(3000, () => console.log('https://api.xzusfin.repl.co'))
 

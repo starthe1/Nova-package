@@ -6,7 +6,7 @@ $if[$findMembers[$message;10;{position}]!=1]
 $author[$userTag[$authorID];$authorAvatar]
 $description[Please choose the following...
 $findMembers[$message;10;**{position}.)** [{tag}](https://discord.gg/vDt8yhyWe6)]]
-$color[BLUE]
+$color[#2f3136]
 $awaitMessages[$authorID;1m;everything;userinfo;$getVar[no] Cancelled]
 $setUserVar[userinf;$findMembers[$message;10;{id}]]
 $elseIf[$findMembers[$message;10;{position}]==1]
@@ -23,7 +23,7 @@ $addField[Tag:;$discriminator[$get[id]];yes]
 $addField[Username:;$username[$get[id]];yes]
 $addField[ID:;\`$get[id]\`;yes]
 ]
-$color[BLUE]
+$color[#2f3136]
 $let[id;$findMembers[$message;10;{id}]]
 $endElseIf
 $endIf
@@ -39,9 +39,9 @@ $let[err;{author:$userTag[$get[idb]]:$userAvatar[$get[idb]]}{thumbnail:$userAvat
 {field:Creation Date#COLON#:$creationDate[$get[idb]]
 \`$creationDate[$get[idb];time]\`:yes}
 {field:Roles[$userRoleCount[$get[idb]]]:$replaceText[$replaceText[$checkCondition[$userRoleCount[$get[idb]]==0];true;Undefined];false;$userRoles[$get[idb];mentions;, ]]:yes}
-{color:BLUE}]
+{color:#2f3136}]
 $let[idb;$findUser[$message]]
-$suppressErrors[{author:$userTag[$authorID]:$authorAvatar}{description:$getVar[no] An error occurred, please try again}{color:RED}]
+$suppressErrors[{author:$userTag[$authorID]:$authorAvatar}{description:$getVar[no] An error occurred, please try again}{color:#2f3136}]
 `,
 }, {
     type: "awaitedCommand",
@@ -61,7 +61,7 @@ $addField[Tag:;$discriminator[$get[st]];yes]
 $addField[Username:;$username[$get[st]];yes]
 $addField[ID;\`$get[st]\`;yes]
 ]
-$color[BLUE]
+$color[#2f3136]
 $let[st;$splitText[$message[1]]]
 $textSplit[$getUserVar[userinf];\n]
 $elseIf[$toLowercase[$message[1]]==cancel]

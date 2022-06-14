@@ -1,9 +1,10 @@
 const func = require('./fn')
 const fs = require('fs')
 const express = require('express')
-const router = express.Router()
+const router = express.Router();
 
-const files = fs.readdirSync('api').filter(file => file.endsWith('.js'))
+
+const files = fs.readdirSync('/root/novastuff/novaimgapi/api').filter(file => file.endsWith('.js'))
 const fn = []
 
 for (const file of files) {

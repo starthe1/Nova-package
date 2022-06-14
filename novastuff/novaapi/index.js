@@ -1,4 +1,4 @@
-﻿//packages
+//packages
 var https = require('https')
 const { exec } = require("child_process");
 const express = require('express');
@@ -30,7 +30,7 @@ const databaseSeperator = chalk.yellow
 //stats
 
 //loaded checker
-console.log(lcsep('------loaded checker-----'))
+console.log(lcsep('──────[ Loaded checker ] ──────'))
 console.log(info('Home page loaded'));
 console.log(info('8ball api loaded'));
 console.log(info('Number gen api loaded'));
@@ -38,7 +38,7 @@ console.log(info('Gay api loaded'));
 console.log(info('Joke api loaded'));
 console.log(info('Twiter api loaded'));
 console.log(info('Nsfw api loaded'));
-console.log(lcsep('--------------------------'))
+console.log(lcsep('───────────────────────────────'))
 console.log(" ")
 
 const app = express();
@@ -141,7 +141,7 @@ app.use(function (err, req, res, next) {
 
 const nodejsv = process.version; //nodejs version
 const { Database } = require("quickmongo");
-const mongo = new Database('');
+const mongo = new Database('mongodb://admin:KCKIafDj5a@n2.luxxy.host:1554/?authSource=admin');
 
 function importData() {
     const data = db.all();
@@ -150,32 +150,31 @@ function importData() {
     });    
 }
 
-mongo.on("ready", () => importData()); 
+mongo.on("ready", () => importData(), () => console.log('data is imported')); 
 
-mongoose.connect(config.api_settings.mongodb,
-{useNewUrlParser: true}, () => { 
-console.log(databaseSeperator("------------------------Database--------------------------"))
+mongoose.connect(config.api_settings.mongodb, {useNewUrlParser: true}, () => { 
+console.log(databaseSeperator("───────────────────────── [ Database ] ─────────────────────────"))
 console.log(online(`${database} Gateway: Connecting.`))
 console.log(online(`${database} Gateway: Connecting..`))
 console.log(online(`${database} Gateway: Connecting...`))
 console.log(online(`${database} Gateway: Connected`))
 console.log(info(`${database} Gateway: Getting Ready, loading database value...`))
-console.log(databaseSeperator("----------------------------------------------------------"))
+console.log(databaseSeperator("────────────────────────────────────────────────────────────────"))
 })
 
 
 
 //port listener
 app.listen(5377, () => {
-  console.log(online("--------------- [ Staticstics ] ---------------"))
-  console.log(online(`[ NodeJS: ${nodejsv}                            ]`))
-  console.log(online("[ ------------------------------------------- ]"))
-  console.log(online("[ Successfully loaded all elements and codes  ]"))
-  console.log(online("[ ------------------------------------------- ]"))
-  console.log(online("[ Nova api is up! ✅                          ]"))
-  console.log(online("[ ------------------------------------------- ]"));
-  console.log(online("[ Connected to - https://api.nova-bot.tk ✅   ]"));
-  console.log(online("-----------------------------------------------"));
+  console.log(online("┌────────────── [ Staticstics ] ──────────────┐"))
+  console.log(online(`│ NodeJS: ${nodejsv}                            │`))
+  console.log(online("├─────────────────────────────────────────────┤"))
+  console.log(online("│ Successfully loaded all elements and codes  │"))
+  console.log(online("├─────────────────────────────────────────────┤"))
+  console.log(online("│ Nova api is up! ✅                           │"))
+  console.log(online("├─────────────────────────────────────────────┤"));
+  console.log(online("│ Connected to - https://api.nova-bot.tk ✅    │"));
+  console.log(online("└─────────────────────────────────────────────┘"));
   console.log(" ")
 })
  

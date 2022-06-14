@@ -9,8 +9,8 @@ const up = chalk.green; // ok working color
 const static = chalk.hex("#03fcca");// Staticstics and lines color
 const blurplexd = chalk.hex("#7289DA"); // xd blurple color
 const on = chalk.yellow; // process turned on color
-
-
+const error = chalk.red;
+const fs = require('fs');
 const Discord = require("discord.js");
 
 const config = require("./handler/config.json");
@@ -35,7 +35,14 @@ applicationCache: true,
 intents: "all",
 })
 
-require('./website/dashboard/index.js')(bot, 27026, './Commands/Plugins/', 'NovaPass', '7122011')
+const files = fs.readdirSync('/root/novastuff/nova/handler/events').filter(file => file.endsWith('.js'))
+files.forEach(x => {
+  require(`/root/novastuff/nova/handler/events/${x}`)(bot)
+});
+
+bot.createLavalinkConnection("n1.artiom.host:1862", "Novalavalink", false, false); //node 3 *artiom
+
+require('./website/dashboard/index.js')(bot,3218,'./Commands/Plugins/', 'NovaPass', '7122011')
 
 const plugins=require("aoi.js-plugins");
 const dash = new plugins.Dash({
@@ -47,6 +54,7 @@ const dash = new plugins.Dash({
 })
 
 bot.loadCommands(`/root/novastuff/nova/Commands/Plugins`)
+
 
 
 const disbut = require('discord-buttons') 
@@ -66,6 +74,7 @@ bot.onMessage({
 
 respondToBots:false// commands will work in dms. set "true" for commands to work in guilds only
 });
+
 
 
 bot.command({
@@ -970,8 +979,7 @@ $addField[
  \`<:badge3:914161810838519819>\` **$1500 | pro badge**
  \`<:badge2:914161785890828318>\` **$10000 | advanced badge**
 ]
-ur pfp cute
-
+x
   $addField[
     __Items:__;
   \`💼\` **$250 | bag**
@@ -1476,16 +1484,64 @@ bot.awaitedCommand({
     $giveRole[$authorID;$getServerVar[rr]]`
 })
  
+bot.awaitedCommand({
+  name: "mute",
+  code: `
+  $setUserVar[warn]
+  $takeRoles[$authorID;$findRole[$getServerVar[mute]]]
+  $wait[2h]
+  $channelSendMessage[$channelID;<@$authorID> has been muted for 2 hours because \`spamming\`]
+  $giveRoles[$authorID;$findRole[$getServerVar[mute]]]`    
+})
 
-
-
-try{}catch(error){
-  console.log(static("--- [ Debug ] ---"))
-  console.log(on("  Bot error "))
-  console.log(static("------------------------"))
-  console.log(blurplexd(" [ Avoding crash ]"))
-  console.log(static("------------------------"))
-  console.log(up(" [ All gud ]"))
-  console.log(static("------------------------"));
-  console.log(up(" [ Connected to the server ]"))
-  console.log(static("------------------------"));}
+bot.command({
+  name: "add-cmd",
+  code: `
+  $setservervar[ccmd;$replacetext[$replacetext[$checkcondition[$getservervar[ccmd]!=];false;$tolowercase[$message[1]]/];true;$getservervar[ccmd]$tolowercase[$message[1]]/]]
+  $setservervar[cdes;$getservervar[cdes]$messageslice[1;10]/]
+  Successfully added $replacetext[$replacetext[\`$tolowercase[$message[1]]\`;#right_click#;>];#left_click#;<] to the commands list, type \`$getservervar[prefix]cmd-list\` to see all available commands
+  $onlyif[$findtextsplitindex[$tolowercase[$message[1]]]==0;{description:Command \`$tolowercase[$message[1]]\` is available in the command list}{color:ff2050}]
+  $textsplit[$getservervar[ccmd];/]
+  $onlyif[$checkcontains[$message;#RIGHT#;#LEFT#;#RIGHT_BRACKET#;#LEFT_BRACKET#;/]==false;{description:Please don't use it \`symbol\` for trigger and response}{color:ff2050}]
+  $argscheck[>2;{description:Correct use\n\`\`\`\n$getservervar[prefix]add-cmd <trigger> <response>\n\`\`\`}{color:ff2050}]
+  $onlyperms[manageserver;{description:You have no permissions for \`MANAGE_SERVER\`}{color:ff2050}{timestamp}]
+  `
+  })
+   
+   
+  bot.command({
+  name: "del-cmd",
+  code: `
+  $setservervar[ccmd;$replacetext[$getservervar[ccmd];$advancedtextsplit[$getservervar[ccmd];/;$findtextsplitindex[$tolowercase[$message]]]/;]]
+  $setservervar[cdes;$replacetext[$getservervar[cdes];$advancedtextsplit[$getservervar[cdes];/;$findtextsplitindex[$tolowercase[$message]]]/;]]
+  Successfully cleared command $replacetext[$replacetext[\`$tolowercase[$message[1]]\`;#right_click#;>];#left_click#;<]
+  $onlyif[$findtextsplitindex[$tolowercase[$message]]!=0;{description:Command \`$tolowercase[$message]\` not available in the command list}{color:ff2050}]
+  $textsplit[$getservervar[ccmd];/]
+  $onlyif[$checkcontains[$message;#RIGHT#;#LEFT#;#RIGHT_BRACKET#;#LEFT_BRACKET#;/]==false;{description:Please don't use it \`symbol\` for trigger and response}{color:ff2050}]
+  $argscheck[>1;{description:Correct use\n\`\`\`\n$getservervar[prefix]del-cmd <trigger>\n\`\`\`}{color:ff2050}]
+  $onlyperms[manageserver;{description:You have no permissions for \`MANAGE_SERVER\`}{color:ff2050}{timestamp}]
+  `
+  })
+   
+  bot.command({
+  name: "cmd-list",
+  code: `
+  $title[**__Custom Commands__**]
+  $color[RANDOM]
+  $thumbnail[$servericon]
+  $description[\`$replacetext[$replacetext[$replacetext[$getservervar[ccmd];#right_click#;>];#left_click#;<];/;, ]\`]
+  $addtimestamp
+  $onlyif[$gettextsplitlength>=2;{description:There are no custom commands on the server \`$servername\`}{color:ff2050}]
+  $textsplit[$getservervar[ccmd];/]
+  `
+  })
+   
+  bot.command({
+  name: "$alwaysExecute",
+  code: `
+  $advancedtextsplit[$getservervar[cdes];/;$findtextsplitindex[$tolowercase[$message]]]
+  $onlyif[$findtextsplitindex[$tolowercase[$message]]!=0;]
+  $onlyif[$isbot[$authorid]==false;]
+  $textsplit[$getservervar[ccmd];/]
+  `
+  })

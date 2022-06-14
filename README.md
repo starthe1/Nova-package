@@ -1,5 +1,10 @@
 # Nova
 
+## Release
+Release number: Vk5Jrs9cy
+Added: Anti Crash, Invisable embeds (Global), Custom commands, able to check other members level (>rank @example)
+
+
 ## Api setup
 
 **Nova api**
@@ -19,7 +24,7 @@ you put in.
 
 **Getting online**
 go to ./novastuff/nova/handler/config.json
-place in the blanks i left comments in there.
+place in the blanks 
 
 Then do npm i and Node index.js after.
 

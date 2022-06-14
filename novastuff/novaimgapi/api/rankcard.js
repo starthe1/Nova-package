@@ -12,7 +12,7 @@ const defaults = {
 	image: ''
 }
 
-Canvas.registerFont('Uni Sans Heavy.otf', { family: 'Uni-Sans-Heavy' })
+Canvas.registerFont('/root/novastuff/novaimgapi/Uni Sans Heavy.otf', { family: 'Uni-Sans-Heavy' })
 
 function abbreviateNumber(number) {
 	const tier = Math.log10(number) / 3 | 0;

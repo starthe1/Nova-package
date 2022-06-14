@@ -3,8 +3,8 @@ module.exports = [{
     code: `
     $buttonCollector[$get[id];$authorID;1m;1,2,0;await1,await2,await0;Only Duckey, reko can use this interaction,,64]
        $let[id;$apiMessage[$channelId;;{title:Dev console}{description:$username pls choose an option}
-{color:RANDOM}{footer: Page 0/7};{actionRow:Reboot,2,2,0,,false,,true:Shutdown,2,1,1,,false};;yes]]
-$onlyForids[$botownerid;746295959251583048;only my owners may use this command]`,
+{color:RANDOM}{footer: Page 0/7};{actionRow:Reboot,2,2,1,,false,,true:Shutdown,2,1,1,,false};;yes]]
+$onlyForids[$botownerid;746295959251583048;746295959251583048;only my owners may use this command]`,
 }, {
     type: "awaitedCommand",
     name: "await1",

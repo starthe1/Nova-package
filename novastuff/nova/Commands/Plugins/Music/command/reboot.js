@@ -9,12 +9,22 @@ $description[) reboot --normal
 $color[$getVar[color]]
 $addTimestamp
 $elseIf[$toLowercase[$message[1]]==--normal]
-$reboot[server.js]
+$exec[pm2 restart Nova]
 $wait[40ms]
 $addCmdReactions[✅]
 $endelseif
 $elseIf[$toLowercase[$message[1]]==--destroy]
-$killClient
+$exec[pm2 stop Nova]
+$wait[40ms]
+$addCmdReactions[✅]
+$endelseif
+$elseIf[$toLowercase[$message[1]]==-n]
+$exec[pm2 restart Nova]
+$wait[40ms]
+$addCmdReactions[✅]
+$endelseif
+$elseIf[$toLowercase[$message[1]]==-d]
+$exec[pm2 stop Nova]
 $wait[40ms]
 $addCmdReactions[✅]
 $endelseif

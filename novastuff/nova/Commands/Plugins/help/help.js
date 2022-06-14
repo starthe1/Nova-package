@@ -1,39 +1,49 @@
-module.exports = [{
+module.exports = ({
     name: "help",
-    code: `$title[Nova Help]
-$description[<:moderation:905787390302490624>  \`\`\>help-mod\`\`\  _ _ _ _ _ _ _ _ _ _ 
-<:ticket:912634005470457856>  \`\`\>help-ticket\`\`\
+    code: `$title[$randomtext[Join the support server!;Add me!]]
+    $description[<:moderation:905787390302490624> [Moderation](https://fakelikeishere.lol) [>help-mod]
+    <:reply:980147502529523752> Search for moderation commands
 
-<:leveling:896951309809365024>  \`\`\>help-leveling\`\`\
+    <:ticket:912634005470457856> [Ticket](https://fakelikeishere.lol) [>help-ticket]
+    <:reply:980147502529523752> Search for ticket commands
 
-🎉  \`\`\>help-giveaway\`\`\
+    <:leveling:896951309809365024> [Leveling](https://fakelikeishere.lol) [>help-leveling]
+    <:reply:980147502529523752> Search for leveling commands
 
-🎵  \`\`\>help-music\`\`\
+    <a:tadablue:904718144663322669> [Giveaway](https://fakelikeishere.lol) [>help-leveling]
+    <:reply:980147502529523752> Search for giveaway commands
 
-💰  \`\`\>help-economy\`\`\
+    🎵 [Music](https://fakelikeishere.lol) [>help-music]
+    <:reply:980147502529523752> Search for music commands
 
-⚙️  \`\`\>help-utility\`\`\
+    💰 [Economy](https://fakelikeishere.lol) [>help-economy]
+    <:reply:980147502529523752> Search for economy commands
 
-:flushed: \`\`\>help-nsfw\`\`\
+    ⚙️ [Utility](https://fakelikeishere.lol) [>help-utility]
+    <:reply:980147502529523752> Search for utility commands
 
-<a:fun:910546867962642463>  \`\`\>help-fun\`\`\
+    :flushed: [Nsfw](https://fakelikeishere.lol) [>help-nsfw]
+    <:reply:980147502529523752> Search for nsfw commands
 
-<:s_invite:960755956449415168> \`\`\>help-invite\`\`\
+    <a:fun:910546867962642463> [Fun](https://fakelikeishere.lol) [>help-fun]
+    <:reply:980147502529523752> Search for fun commands
 
-😁 \`\`\>help-reaction\`\`\
+    <:s_invite:960755956449415168> [Invite](https://fakelikeishere.lol) [>help-invite]
+    <:reply:980147502529523752> Search for invite commands
+
+    😁 [Reaction roles](https://fakelikeishere.lol) [>help-reaction]
+    <:reply:980147502529523752> Search for reaction commands
+
+    :robot: [Auto moderation](https://fakelikeishere.lol) [>help-automod]
+    <:reply:980147502529523752> Search for automod commands
+
+$addfield[Nova api;[Thermal hosting](https://thermalhosting.com/whmcs/aff.php?aff=4)
+[Luxxy hosting](https://discord.gg/P3BQAyc8yY)]
+]
 
 
-> Quick access
 
-> Info links
-> [Status](https://status.nova-bot.tk) 
-> [Website](https://dashboard.nova-bot.tk)
-> [Github](https://github.com/nova-develoment-team)
-> [Admin panel](https://da.nova-bot.tk/)
-
-> Others
-> [Hosting](https://discord.gg/P3BQAyc8yY)
-** > [Thermal hosting](https://thermalhosting.com/whmcs/aff.php?aff=4)**
-> [Support server](https://discord.gg/BASBGn7Gwh)]
-$color[#2f3136]`
-}]
+$color[#2f3136]
+    
+                    `
+})

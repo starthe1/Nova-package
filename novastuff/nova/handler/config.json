@@ -1,21 +1,22 @@
 {
 
 "bots_settings": {
-"token": "" //bot token
+"token": "",
+"topgg": ""
 },
 
 "dash_settings": {
 
-"id": , //discord bot id
-"secret": "", //Discord bot secret
-"redirect": "" //your domain with /callback infront put in redirect area in discord developer portal
+"id": , 
+"secret": "",
+"redirect": "https://dashboard.nova-bot.tk/callback" 
 },
 
 "webite_settings": {
-    "title": "",//embed and webpage title
-    "url": "", //website url
-    "status-page": "", //Status page url (optional)
-    "embed-description": "" //discord embed description for website
+    "title": "Nova",
+    "url": "https://dashboard.nova-bot.tk", 
+    "status-page": "https://status.nova-bot.tk", 
+    "embed-description": "the best bot" 
 }
 
 }

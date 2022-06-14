@@ -2,5 +2,5 @@ module.exports = ({
 name: "help-giveaway",
 code: `$title[🎉 Nova giveaway]
 $description[giveaway ¦ start giveaway]
-$color[#ffbcd9]`
+$color[#2f3136]`
 })

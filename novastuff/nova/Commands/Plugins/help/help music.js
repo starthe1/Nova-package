@@ -27,5 +27,6 @@ musicsettings ¦ musicsettings
 playlist ¦ Shows your playlist
 playlist-add ¦ add a song to your playlist
 playlist-remove ¦ remove a song from your playlist
-playlist-play ¦ play something from your playlist]`
+playlist-play ¦ play something from your playlist]
+$color[#2f3136]`
 })

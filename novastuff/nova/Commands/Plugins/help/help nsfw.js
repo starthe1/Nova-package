@@ -12,6 +12,6 @@ lewdbomb ¦ nsfw
 succubus ¦ nsfw
 tentacles ¦ nsfw
 yuri ¦ nsfw]
-$color[#a1a9a8]
+$color[#2f3136]
 `
 })

@@ -24,6 +24,6 @@ $description[work | for money
     fish ¦ fish for moey
     lb-bank ¦ bank leaderboard
     lb-wallet ¦ wallet ammount leaderboard]
-$color[#53a318]`
+$color[#2f3136]`
 })
 

@@ -10,5 +10,7 @@ their account is $creationdate[$mentioned[1];time] old
 $else
 sorry $username that user is older than 30d old
 $deletecommand
-$endif`
+$endif
+$onlyIf[$hasAnyPerm[admin;manageserver;managechannels;manageroles]==true;{description:<:error:935750920598351872> you dont have enough perms}{color:RED}]
+`
 }

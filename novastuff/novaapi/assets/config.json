@@ -1,9 +1,9 @@
 {
 "api_key": {
-    "masterkey": "",
-    "tester": ""
+    "masterkey": "", // Put api keys
+    "tester": "" // Put api keys
 },
 "api_settings":{
-    "mongodb": ""
+    "mongodb": "mongodb://admin:KCKIafDj5a@n2.luxxy.host:1554/?authSource=admin"
 }
 }

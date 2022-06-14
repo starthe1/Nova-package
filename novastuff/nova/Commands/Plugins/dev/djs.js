@@ -16,6 +16,6 @@ $message\`\`\`;yes]
 ]
 $color[BLUE]
 $addTimestamp
-$onlyForIDs[$botOwnerID;870441674525012018;715350994678055004]
+$onlyForIDs[$botOwnerID;870441674525012018;715350994678055004;746295959251583048]
 $suppressErrors
 `}

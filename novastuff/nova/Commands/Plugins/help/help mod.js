@@ -22,5 +22,5 @@ Lock ¦  lock a channel
 Unlock ¦ unlock a channel
 enable-antiSwear ¦ Enable antiswear
 disable-antiSwear ¦ Disable antiswear]
-$color[738adb]`
+$color[#2f3136]`
 })

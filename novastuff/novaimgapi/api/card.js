@@ -6,7 +6,7 @@ const defaults = {
 	background: ''
 }
 
-Canvas.registerFont('Uni Sans Heavy.otf', { family: 'Uni-Sans-Heavy' })
+Canvas.registerFont('/root/novastuff/novaimgapi/Uni Sans Heavy.otf', { family: 'Uni-Sans-Heavy' })
 
 module.exports = async function card(reqQuery) {
 	const query = {}
