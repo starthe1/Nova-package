@@ -1,4 +1,6 @@
 //packages
+
+const { Database } = require("quickmongo");
 var https = require('https')
 const { exec } = require("child_process");
 const express = require('express');
@@ -8,8 +10,7 @@ const gay = require("./assets/gay.json")
 const joke = require("./assets/dadjokes.json")
 const num = require("./assets/num.json")
 const got = require('got')
-const db = require('quick.db')
-const keysList = require('./assets/keys.js').keys
+const keysList = require("/root/novastuff/novaapi/assets/keys.js").keys
 const { Canvas } = require('canvas-constructor/cairo')
 const fetch = require('node-fetch');
 const canvas = require('canvas');
@@ -17,7 +18,8 @@ const axios = require('axios');
 const chalk = require("chalk")
 const database = 'MongoDB';
 const mongoose = require('mongoose')
-const config = require('/root/novastuff/novaapi/assets/config.json')
+const config = require('./assets/config.json')
+const db = new Database(config.api_settings.mongodb);
 
 //colors
 const online = chalk.green;
@@ -43,7 +45,18 @@ console.log(" ")
 
 const app = express();
 
+//mongodb database. DO NOT CHANGE!!!! it works
+db.on("ready", () => {
+console.log(databaseSeperator("───────────────────────── [ Database ] ─────────────────────────"))
+console.log(online(`${database} Gateway: Connecting.`))
+console.log(online(`${database} Gateway: Connecting..`))
+console.log(online(`${database} Gateway: Connecting...`))
+console.log(online(`${database} Gateway: Connected`))
+console.log(info(`${database} Gateway: Getting Ready, loading database value...`))
+console.log(databaseSeperator("────────────────────────────────────────────────────────────────"))
+});
 
+db.connect();
 
 require("./routes")(app)
 
@@ -59,6 +72,9 @@ if (!key || !keysList.includes(key)) return res.json({ error: "invalid key" })
     
     rand_deeznuts = deeznuts[Math.floor(Math.random() * deeznuts.length)]
     res.json({ response: rand_deeznuts })
+    db.add("req_fun", 1)
+        db.add("req_8ball", 1);
+
 });
 
 
@@ -70,6 +86,9 @@ if (!key || !keysList.includes(key)) return res.json({ error: "invalid key" })
                                         
     rand_gay = gay[Math.floor(Math.random() * gay.length)]
     res.json({ response: rand_gay })
+    
+    db.add("req_fun", 1)
+        db.add("req_gay", 1);
 });
 
 app.get('/fun/joke', (req, res) => {       
@@ -80,7 +99,9 @@ if (!key || !keysList.includes(key)) return res.json({ error: "invalid key" })
   
     rand_joke = joke[Math.floor(Math.random() * joke.length)]
     res.json({ response: rand_joke })
-});
+    
+    db.add("req_fun", 1)
+        db.add("req_joke", 1);});
 
 
 app.get('/misc/num', (req, res) => { 
@@ -91,6 +112,9 @@ if (!key || !keysList.includes(key)) return res.json({ error: "invalid key" })
   
     rand_num = num[Math.floor(Math.random() * num.length)]
     res.json({ response: rand_num })
+    
+    db.add("req_misc", 1)
+        db.add("req_num", 1);
 });
 
 app.get('/fun/twiter/:feed', async (req, res) => {
@@ -111,6 +135,8 @@ if (!key || !keysList.includes(key)) return res.json({ error: "invalid key" })
     res.set({'Content-Type': 'image/png'})//setting content type as png image!
     res.send(image)//sending the image!
 
+    db.add("req_fun", 1)
+        db.add("req_twitter", 1);
 });
 
 app.get('/api', (req,res) => {
@@ -138,36 +164,10 @@ app.use(function (err, req, res, next) {
 
 
 
-
-const nodejsv = process.version; //nodejs version
-const { Database } = require("quickmongo");
-const mongo = new Database('mongodb://admin:KCKIafDj5a@n2.luxxy.host:1554/?authSource=admin');
-
-function importData() {
-    const data = db.all();
-    mongo.import(data).then(() => {
-        console.log("Done!");
-    });    
-}
-
-mongo.on("ready", () => importData(), () => console.log('data is imported')); 
-
-mongoose.connect(config.api_settings.mongodb, {useNewUrlParser: true}, () => { 
-console.log(databaseSeperator("───────────────────────── [ Database ] ─────────────────────────"))
-console.log(online(`${database} Gateway: Connecting.`))
-console.log(online(`${database} Gateway: Connecting..`))
-console.log(online(`${database} Gateway: Connecting...`))
-console.log(online(`${database} Gateway: Connected`))
-console.log(info(`${database} Gateway: Getting Ready, loading database value...`))
-console.log(databaseSeperator("────────────────────────────────────────────────────────────────"))
-})
-
-
-
 //port listener
-app.listen(5377, () => {
+app.listen(6229, () => {
   console.log(online("┌────────────── [ Staticstics ] ──────────────┐"))
-  console.log(online(`│ NodeJS: ${nodejsv}                            │`))
+  console.log(online(`│ NodeJS: 16.0.1                              │`))
   console.log(online("├─────────────────────────────────────────────┤"))
   console.log(online("│ Successfully loaded all elements and codes  │"))
   console.log(online("├─────────────────────────────────────────────┤"))

@@ -1,6 +1,9 @@
 const akaneko = require('akaneko');
 //const keyz = require('../assets/keys.js').keys
-const db = require("quick.db")
+const { Database } = require('quickmongo')
+const mongoose = require('mongoose')
+const config = require('/home/container/assets/config.json')
+const db = new Database(config.api_settings.mongodb);
 module.exports = {
   name: "test/lewdbomb",
   run: async(req, res) => {

@@ -1,6 +1,11 @@
-const db = require("quick.db")
 const akaneko = require('akaneko');
-const keysList = require('../assets/keys.js').keys
+const keysList = require("/root/novastuff/novaapi/assets/keys.js").keys
+const { Database } = require('quickmongo')
+const mongoose = require('mongoose')
+const config = require("/root/novastuff/novaapi/assets/config.json");
+const db = new Database(config.api_settings.mongodb);
+db.connect();
+
 module.exports = {
   name: "nsfw/bdsm",
   run: async(req, res) => {
@@ -12,7 +17,6 @@ module.exports = {
     res.json({ 
       url: image,  
     })
-    db.add("reqs_nsfw",1)
-    db.add("reqs_bdsm",1)
-  }
+          db.add("reqs_nsfw",1)
+          db.add("reqs_Bdsm", 1)  }
 }
