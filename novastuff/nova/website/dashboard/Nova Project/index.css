@@ -1,0 +1,54 @@
+
+html, body {
+    background-color: #5865F2;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+form {
+    background-color: #242424;
+    height: 100%;
+    width: 100%;
+}
+section {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+div {
+background-color: #5865F2;
+margin: 1rem;
+border-radius: 10px;
+padding: 1rem 2rem;
+}
+button {
+    color: #242424;
+    border-radius: 10px;
+    border: none;
+    padding: 0.25rem 1.25rem
+}
+img {
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+/*Trasition*/
+
+.animate {
+  animation: scale 1.5s 0.27s both;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
